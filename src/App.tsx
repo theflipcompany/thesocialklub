@@ -6,6 +6,7 @@ import { FloatingElements } from "@/components/yestalgia/FloatingElements";
 import { FoundersFloating } from "@/components/yestalgia/FoundersFloating";
 import { Hero } from "@/components/yestalgia/Hero";
 import { Collection } from "@/components/yestalgia/Collection";
+import { Team } from "@/components/yestalgia/Team";
 import { Histoire } from "@/components/yestalgia/Histoire";
 import { AudioPlayer } from "@/components/yestalgia/AudioPlayer";
 import { Footer } from "@/components/yestalgia/Footer";
@@ -34,6 +35,7 @@ export default function App() {
       <main id="top">
         <Hero />
         <Collection />
+        <Team />
         <Histoire />
       </main>
 

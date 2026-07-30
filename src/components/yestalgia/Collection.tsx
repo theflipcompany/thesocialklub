@@ -13,7 +13,6 @@ interface EventItem {
   id: string;
   name: string;
   category: "meetups" | "music" | "games" | "workshops";
-  price: string;
   tagline: string;
   image: string;
   badge?: string;
@@ -28,7 +27,6 @@ const eventsList: EventItem[] = [
     id: "cafe-meetups",
     name: "Cafe Meetups",
     category: "meetups",
-    price: "Free Entry",
     tagline:
       "Conversations over artisanal coffee, pastries and deep talks in Lucknow's cozy spots.",
     image: cardLights,
@@ -42,7 +40,6 @@ const eventsList: EventItem[] = [
     id: "open-mic",
     name: "Open Mic Nights",
     category: "music",
-    price: "₹299",
     tagline: "Stories, poetry, shayari, live acoustic sets and everything in between.",
     image: cardMic,
     badge: "Featured",
@@ -55,7 +52,6 @@ const eventsList: EventItem[] = [
     id: "game-nights",
     name: "Board Game Nights",
     category: "games",
-    price: "₹199",
     tagline: "Catan, Monopoly, Secret Hitler, laughs and friendly competition with new friends.",
     image: cardChess,
     badge: "Weekend Vibe",
@@ -68,7 +64,6 @@ const eventsList: EventItem[] = [
     id: "unique-experiences",
     name: "Pottery & Workshops",
     category: "workshops",
-    price: "₹499",
     tagline: "Hands-on pottery, canvas painting, stargazing and unique weekend sessions.",
     image: cardPlant,
     badge: "Limited Spots",
@@ -81,7 +76,6 @@ const eventsList: EventItem[] = [
     id: "rooftop-sunsets",
     name: "Rooftop Sunsets & Jamming",
     category: "music",
-    price: "₹349",
     tagline: "Acoustic guitar sessions, golden hour views, cold brews and great company.",
     image: groupScene,
     badge: "Must Visit",
@@ -94,7 +88,6 @@ const eventsList: EventItem[] = [
     id: "social-mixer",
     name: "Speed Friending Mixer",
     category: "meetups",
-    price: "₹249",
     tagline: "Fun icebreaker games designed to help you meet 15+ new people in a single evening.",
     image: heroScene,
     badge: "Icebreaker",
@@ -185,7 +178,7 @@ export function Collection() {
                     className="relative rounded-2xl border-3 border-black p-4 mb-5 shadow-[4px_4px_0px_#000] transition-colors"
                     style={{ backgroundColor: eventItem.tapeColor }}
                   >
-                    {/* Top Screws + Tape Number + Price */}
+                    {/* Top Screws + Tape Number */}
                     <div className="flex justify-between items-center mb-3">
                       <div className="w-3 h-3 rounded-full border border-black bg-gray-300 flex items-center justify-center">
                         <div className="w-full h-[1px] bg-black transform rotate-45" />
@@ -194,9 +187,6 @@ export function Collection() {
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-[10px] font-black uppercase tracking-widest text-black bg-white/80 px-2 py-0.5 rounded border border-black shadow-[1px_1px_0px_#000]">
                           {eventItem.tapeNumber}
-                        </span>
-                        <span className="font-condensed font-black text-xs text-white bg-black px-2.5 py-0.5 rounded-full border border-black uppercase shadow-[1px_1px_0px_#000]">
-                          {eventItem.price}
                         </span>
                       </div>
 
