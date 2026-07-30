@@ -74,7 +74,8 @@ export function Team() {
               Co-Founder
             </p>
             <p className="text-gray-700 text-sm font-medium leading-relaxed">
-              The creative spark who asked <span className="italic font-bold">"Aaj kuch karein?"</span> and started it all.
+              The creative spark who asked{" "}
+              <span className="italic font-bold">"Aaj kuch karein?"</span> and started it all.
             </p>
           </motion.div>
 
@@ -101,7 +102,8 @@ export function Team() {
               Managing Head
             </p>
             <p className="text-gray-700 text-sm font-medium leading-relaxed">
-              I came with a camera, stayed for the people, and now build experiences that bring them together.
+              I came with a camera, stayed for the people, and now build experiences that bring them
+              together.
             </p>
           </motion.div>
         </div>
