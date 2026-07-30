@@ -19,12 +19,7 @@ interface MobileTeamCardProps {
   onToggleFlip: () => void;
 }
 
-export function MobileTeamCard({
-  member,
-  index,
-  isFlipped,
-  onToggleFlip,
-}: MobileTeamCardProps) {
+export function MobileTeamCard({ member, index, isFlipped, onToggleFlip }: MobileTeamCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

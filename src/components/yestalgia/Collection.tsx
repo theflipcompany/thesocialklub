@@ -1,15 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  Ticket,
-  MapPin,
-  Users,
-  RotateCcw,
-  ExternalLink,
-  Eye,
-  Clock,
-  Lock,
-} from "lucide-react";
+import { Ticket, MapPin, Users, RotateCcw, ExternalLink, Eye, Clock, Lock } from "lucide-react";
 
 import { useWeeklyRegistration } from "@/hooks/useWeeklyRegistration";
 

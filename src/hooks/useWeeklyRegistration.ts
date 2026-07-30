@@ -3,7 +3,7 @@ import { getRegistrationState, RegistrationState } from "@/utils/registration";
 
 export function useWeeklyRegistration(): RegistrationState {
   const [regState, setRegState] = useState<RegistrationState>(() =>
-    getRegistrationState(new Date())
+    getRegistrationState(new Date()),
   );
 
   useEffect(() => {

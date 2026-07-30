@@ -8,7 +8,8 @@ export function FoundersFloating() {
   const [isDismissedRight, setIsDismissedRight] = useState(false);
 
   useEffect(() => {
-    const targetElement = document.getElementById("team") || document.getElementById("why-we-started");
+    const targetElement =
+      document.getElementById("team") || document.getElementById("why-we-started");
     if (!targetElement) return;
 
     const observer = new IntersectionObserver(

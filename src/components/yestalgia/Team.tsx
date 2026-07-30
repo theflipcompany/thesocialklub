@@ -23,8 +23,8 @@ const teamMembers: TeamMemberData[] = [
     image: `${import.meta.env.BASE_URL}mehak-image.jpg`,
     description: (
       <span>
-        The creative spark who asked{" "}
-        <span className="italic font-bold">"Aaj kuch karein?"</span> and started it all.
+        The creative spark who asked <span className="italic font-bold">"Aaj kuch karein?"</span>{" "}
+        and started it all.
       </span>
     ),
   },
