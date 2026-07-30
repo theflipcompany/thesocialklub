@@ -40,7 +40,7 @@ export function FoundersFloating() {
               {/* Male Founder Cutout (Sourav) */}
               <div className="relative w-16 sm:w-22 md:w-26">
                 <img
-                  src="/founder-male.png"
+                  src={`${import.meta.env.BASE_URL}founder-male.png`}
                   alt="Sourav - Social Klub Founder"
                   className="w-full h-auto drop-shadow-[4px_4px_0px_#000]"
                 />
@@ -81,7 +81,7 @@ export function FoundersFloating() {
               {/* Female Founder Cutout (Mehak) */}
               <div className="relative w-20 sm:w-28 md:w-32">
                 <img
-                  src="/founder-female.png"
+                  src={`${import.meta.env.BASE_URL}founder-female.png`}
                   alt="Mehak - Social Klub Co-Founder"
                   className="w-full h-auto drop-shadow-[4px_4px_0px_#000]"
                 />

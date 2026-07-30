@@ -46,7 +46,7 @@ export function Hero() {
             {/* Video Container */}
             <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-lg sm:rounded-xl border-2 border-black bg-neutral-900 group">
               <video
-                src="/Video-580.mp4"
+                src={`${import.meta.env.BASE_URL}Video-580.mp4`}
                 autoPlay
                 loop
                 muted
