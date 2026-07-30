@@ -8,7 +8,7 @@ export function FoundersFloating() {
   const [isDismissedRight, setIsDismissedRight] = useState(false);
 
   useEffect(() => {
-    const targetElement = document.getElementById("behind-this-klub");
+    const targetElement = document.getElementById("team") || document.getElementById("why-we-started");
     if (!targetElement) return;
 
     const observer = new IntersectionObserver(
@@ -16,7 +16,7 @@ export function FoundersFloating() {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.15, // Trigger when 15% of Behind This Klub section is in view
+        threshold: 0.15, // Trigger when section is in view
       },
     );
 

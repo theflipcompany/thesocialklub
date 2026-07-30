@@ -91,7 +91,7 @@ export function Hero() {
               <br />
               AND YOUR{" "}
               <span className="inline-block transform -skew-x-6 text-[#d7dd44] drop-shadow-[2px_2px_0px_#000] sm:drop-shadow-[4px_4px_0px_#000]">
-                HAPPY HOURS.
+                हAPPY HOURS.
               </span>
             </h1>
 
@@ -146,91 +146,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* WHY WE STARTED Section (Directly before Behind This Klub) */}
-        <div className="mt-10 sm:mt-16 w-full max-w-4xl" id="why-we-started">
-          <div className="relative bg-white border-3 sm:border-4 border-black p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[8px_8px_0px_#00966e] text-black text-center overflow-hidden">
-            {/* Tag */}
-            <div className="inline-block bg-[#d7dd44] text-black font-condensed text-xs sm:text-sm font-black px-3.5 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_#000] uppercase mb-4">
-              OUR ORIGIN STORY
-            </div>
-
-            <h2 className="font-condensed text-4xl sm:text-6xl font-black text-black tracking-tight uppercase leading-none mb-6 text-center">
-              WHY WE <span className="text-[#e95f95]">STARTED</span>
-            </h2>
-
-            <div className="space-y-4 text-gray-800 font-medium text-base sm:text-lg leading-relaxed max-w-3xl mx-auto text-center">
-              <p className="font-bold text-gray-900 text-lg sm:text-xl">
-                It all started with a simple question.
-              </p>
-
-              <blockquote className="my-4 italic font-condensed font-bold text-2xl sm:text-4xl text-[#00966e] bg-[#f9faf7] py-3 px-6 rounded-2xl border-2 border-black shadow-[3px_3px_0px_#e95f95] inline-block mx-auto">
-                "Aaj kuch karein?"
-              </blockquote>
-
-              <p>
-                Mehak said it one evening, and we realised we never had an answer beyond cafés,
-                clubs, or sitting together while scrolling on our phones.
-              </p>
-
-              <p className="font-semibold text-black">
-                So, in our early twenties, we decided to build the kind of space we wished existed.
-              </p>
-
-              <p>
-                There were sleepless nights, endless venue hunts, ideas that failed, and countless
-                baby steps. But the vision never changed to create a place where people could truly
-                gather. A space that felt safe, especially for women, where strangers could become
-                friends, and where moments were lived instead of recorded.
-              </p>
-
-              <div className="pt-4 border-t-2 border-gray-200">
-                <p className="font-bold text-black text-lg sm:text-xl">
-                  The Social कlub isn't just about events.
-                </p>
-                <p className="mt-2 text-[#00966e] font-semibold max-w-2xl mx-auto">
-                  It's about giving people a reason to put their phones away, be present, and leave
-                  feeling a little more connected than when they arrived.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* BEHIND THIS KLUB Section (Directly under Why We Started) */}
-        <div className="mt-10 sm:mt-16 w-full max-w-4xl" id="behind-this-klub">
-          <div className="relative bg-[#18181b] border-3 sm:border-4 border-black p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[8px_8px_0px_#d7dd44] text-white text-center overflow-hidden">
-            {/* Tag */}
-            <div className="inline-block bg-[#e95f95] text-white font-condensed text-xs sm:text-sm font-black px-3.5 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_#000] uppercase mb-4">
-              THE FACES & THE STORY
-            </div>
-
-            <h2 className="font-condensed text-4xl sm:text-6xl font-black text-[#d7dd44] tracking-tight uppercase leading-none mb-4">
-              BEHIND THIS <span className="text-white">KLUB</span>
-            </h2>
-
-            <p className="max-w-2xl mx-auto text-sm sm:text-lg text-gray-300 font-semibold leading-relaxed mb-6">
-              Founded by passionate creators in Lucknow who wanted to break the routine, turn
-              weekends into memories and build spaces where nobody feels like a stranger.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left font-mono text-xs text-gray-300">
-              <div className="bg-[#242429] p-4 rounded-xl border border-zinc-700">
-                <span className="text-[#d7dd44] font-black uppercase text-sm block mb-1">
-                  ⚡ THE VISION
-                </span>
-                Bringing people out of screen routines into real-life conversations, cozy cafe jams
-                & board game nights.
-              </div>
-              <div className="bg-[#242429] p-4 rounded-xl border border-zinc-700">
-                <span className="text-[#e95f95] font-black uppercase text-sm block mb-1">
-                  ✨ THE COMMUNITY
-                </span>
-                Over 1,000+ happy faces, 50+ weekend gatherings and endless memories created across
-                Lucknow.
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

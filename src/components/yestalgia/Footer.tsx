@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SocialKlubLogo } from "./DecathlonLogo";
 import { FlipCoLogo } from "./FlipCoLogo";
-import { Send, ArrowUp, Check } from "lucide-react";
+import { Send, ArrowUp, Check, Instagram } from "lucide-react";
 
 export function Footer() {
   const [submitted, setSubmitted] = useState(false);
@@ -56,6 +56,14 @@ export function Footer() {
                   className="c-button -pink py-3 px-6 font-black uppercase text-xs flex items-center justify-center gap-2"
                 >
                   Join WhatsApp Klub <Send className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/thesocialklub.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="c-button -teal py-3 px-6 font-black uppercase text-xs flex items-center justify-center gap-2"
+                >
+                  Instagram <Instagram className="h-4 w-4" />
                 </a>
               </div>
             </div>
