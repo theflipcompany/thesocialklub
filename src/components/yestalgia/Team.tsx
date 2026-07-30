@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Camera, Sparkles, UserCheck } from "lucide-react";
 
 export function Team() {
   return (
@@ -36,8 +35,13 @@ export function Team() {
               Co-Founder
             </div>
 
-            <div className="w-20 h-20 sm:w-24 sm:h-24 mb-5 rounded-2xl bg-[#00966e]/10 border-3 border-black flex items-center justify-center p-3 shadow-[4px_4px_0px_#000]">
-              <UserCheck className="w-10 h-10 text-[#00966e]" />
+            {/* Sourav Image Frame */}
+            <div className="w-24 h-24 sm:w-28 sm:h-28 mb-5 rounded-full border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000] bg-[#f9faf7] shrink-0">
+              <img
+                src={`${import.meta.env.BASE_URL}sourav-image.jpeg`}
+                alt="Sourav - Co-founder"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             <h3 className="font-condensed text-3xl sm:text-4xl font-black text-black uppercase tracking-tight mb-1">
@@ -63,8 +67,13 @@ export function Team() {
               Co-Founder
             </div>
 
-            <div className="w-20 h-20 sm:w-24 sm:h-24 mb-5 rounded-2xl bg-[#e95f95]/10 border-3 border-black flex items-center justify-center p-3 shadow-[4px_4px_0px_#000]">
-              <Sparkles className="w-10 h-10 text-[#e95f95]" />
+            {/* Mehak Image Frame */}
+            <div className="w-24 h-24 sm:w-28 sm:h-28 mb-5 rounded-full border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000] bg-[#f9faf7] shrink-0">
+              <img
+                src={`${import.meta.env.BASE_URL}mehak-image.jpg`}
+                alt="Mehak - Co-founder"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             <h3 className="font-condensed text-3xl sm:text-4xl font-black text-black uppercase tracking-tight mb-1">
@@ -91,8 +100,13 @@ export function Team() {
               Managing Head
             </div>
 
-            <div className="w-20 h-20 sm:w-24 sm:h-24 mb-5 rounded-2xl bg-[#0693e3]/10 border-3 border-black flex items-center justify-center p-3 shadow-[4px_4px_0px_#000]">
-              <Camera className="w-10 h-10 text-[#0693e3]" />
+            {/* Granthik Image Frame */}
+            <div className="w-24 h-24 sm:w-28 sm:h-28 mb-5 rounded-full border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000] bg-[#f9faf7] shrink-0">
+              <img
+                src={`${import.meta.env.BASE_URL}granthik-image.jpeg`}
+                alt="Granthik - Managing Head"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             <h3 className="font-condensed text-3xl sm:text-4xl font-black text-black uppercase tracking-tight mb-1">
