@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Social Club</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // Redirects to root maintaining pathing
+      const pathSegments = window.location.pathname.split('/');
+      const repoName = pathSegments[1] || '';
+      window.location.replace(window.location.origin + '/' + repoName + '/#' + window.location.pathname + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

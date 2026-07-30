@@ -1,0 +1,232 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --color-yestalgia-yellow: #d7dd44;
+  --color-yestalgia-teal: #00966e;
+  --color-yestalgia-pink: #e95f95;
+  --color-yestalgia-orange: #f09341;
+  --color-yestalgia-blue: #0693e3;
+  --color-yestalgia-bg: #ecece7;
+  --color-yestalgia-dark: #121212;
+
+  --font-retro: "Barlow Condensed", "Syne", sans-serif;
+  --font-sans: "Outfit", "Roboto Flex", system-ui, sans-serif;
+}
+
+:root {
+  --yestalgia-yellow: #d7dd44;
+  --yestalgia-teal: #00966e;
+  --yestalgia-pink: #e95f95;
+  --yestalgia-orange: #f09341;
+  --yestalgia-blue: #0693e3;
+  --yestalgia-bg: #f2f2ee;
+  --yestalgia-black: #111111;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--yestalgia-bg);
+    color: var(--yestalgia-black);
+  }
+  body {
+    background-color: var(--yestalgia-bg);
+    color: var(--yestalgia-black);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Retro Brutalist Button System matching Decathlon Yestalgia */
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--yestalgia-yellow);
+  color: var(--yestalgia-black);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+.c-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000;
+  background-color: #e2e84a;
+}
+
+.c-button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.c-button.-dark {
+  background-color: #111;
+  color: #fff;
+  border-color: #000;
+}
+
+.c-button.-dark:hover {
+  background-color: #222;
+}
+
+.c-button.-pink {
+  background-color: var(--yestalgia-pink);
+  color: #fff;
+}
+
+.c-button.-teal {
+  background-color: var(--yestalgia-teal);
+  color: #fff;
+}
+
+/* Keyframe animations for retro cassette spools and floating Memphis graphics */
+@keyframes spin-spool {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-spool-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes float-yestalgia {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes float-yestalgia-alt {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(-3deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-spool {
+  animation: spin-spool 4s linear infinite;
+  transform-origin: center;
+}
+
+.animate-spool-fast {
+  animation: spin-spool 1.5s linear infinite;
+  transform-origin: center;
+}
+
+.animate-float-1 {
+  animation: float-yestalgia 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-yestalgia-alt 7s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 3D Extruded Retro Text Effect */
+.retro-title-shadow {
+  text-shadow:
+    3px 3px 0px #000,
+    6px 6px 0px var(--yestalgia-yellow),
+    9px 9px 0px #000;
+}
+
+.retro-green-title {
+  color: #00966e;
+  -webkit-text-stroke: 2px #000;
+  filter: drop-shadow(4px 4px 0px #000);
+}
+
+.retro-pink-title {
+  color: #e95f95;
+  -webkit-text-stroke: 2px #000;
+  filter: drop-shadow(4px 4px 0px #000);
+}
+
+.font-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.font-syne {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+}
+
+/* Grid background pattern matching retro VHS grid */
+.yestalgia-grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
