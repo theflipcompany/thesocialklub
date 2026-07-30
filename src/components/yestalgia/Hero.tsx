@@ -121,9 +121,9 @@ export function Hero() {
             </h2>
 
             <p className="max-w-2xl mx-auto text-sm sm:text-lg font-semibold text-gray-700 leading-relaxed mb-6 sm:mb-8">
-              We're not just another social page. We're a community originated in Lucknow that brings people
-              together through experiences that feel real — from cozy cafe meetups to open mics,
-              game nights and rooftop sunsets.
+              We're not just another social page. We're a community originated in Lucknow that
+              brings people together through experiences that feel real — from cozy cafe meetups to
+              open mics, game nights and rooftop sunsets.
             </p>
 
             {/* CTA Buttons */}
@@ -168,7 +168,8 @@ export function Hero() {
               </blockquote>
 
               <p>
-                Mehak said it one evening, and we realised we never had an answer beyond cafés, clubs, or sitting together while scrolling on our phones.
+                Mehak said it one evening, and we realised we never had an answer beyond cafés,
+                clubs, or sitting together while scrolling on our phones.
               </p>
 
               <p className="font-semibold text-black">
@@ -176,7 +177,10 @@ export function Hero() {
               </p>
 
               <p>
-                There were sleepless nights, endless venue hunts, ideas that failed, and countless baby steps. But the vision never changed to create a place where people could truly gather. A space that felt safe, especially for women, where strangers could become friends, and where moments were lived instead of recorded.
+                There were sleepless nights, endless venue hunts, ideas that failed, and countless
+                baby steps. But the vision never changed to create a place where people could truly
+                gather. A space that felt safe, especially for women, where strangers could become
+                friends, and where moments were lived instead of recorded.
               </p>
 
               <div className="pt-4 border-t-2 border-gray-200">
@@ -184,7 +188,8 @@ export function Hero() {
                   The Social कlub isn't just about events.
                 </p>
                 <p className="mt-2 text-[#00966e] font-semibold max-w-2xl mx-auto">
-                  It's about giving people a reason to put their phones away, be present, and leave feeling a little more connected than when they arrived.
+                  It's about giving people a reason to put their phones away, be present, and leave
+                  feeling a little more connected than when they arrived.
                 </p>
               </div>
             </div>
