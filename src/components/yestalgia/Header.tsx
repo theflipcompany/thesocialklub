@@ -41,6 +41,9 @@ export function Header({ isMenuOpen, onToggleMenu }: HeaderProps) {
           aria-label="The Social Klub Home"
         >
           <SocialKlubLogo className="drop-shadow-md" />
+          <span className="mt-1 font-mono text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#0052cc] text-white px-2 py-0.5 rounded-full border border-black shadow-[1px_1px_0px_#000] whitespace-nowrap">
+            Backed by The FLIP Co.
+          </span>
         </a>
       </div>
 

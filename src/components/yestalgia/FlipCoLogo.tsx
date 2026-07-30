@@ -3,9 +3,9 @@ import React from "react";
 export function FlipCoLogo() {
   return (
     <div className="flex flex-col items-center justify-center select-none">
-      {/* "POWERED BY" Pill */}
+      {/* "BACKED BY" Pill */}
       <div className="bg-[#d7dd44] border-2 border-black rounded-md px-3 py-0.5 text-[10px] sm:text-[11px] font-black font-mono tracking-widest text-black shadow-[2px_2px_0px_#000] uppercase">
-        POWERED BY
+        BACKED BY
       </div>
 
       {/* Eyelash Rays */}

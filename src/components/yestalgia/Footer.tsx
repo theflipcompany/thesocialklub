@@ -28,7 +28,7 @@ export function Footer() {
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 items-center">
-          {/* Logo & Slogan + Powered By */}
+          {/* Logo & Slogan + Backed By */}
           <div className="md:col-span-5 flex flex-col gap-4">
             <SocialKlubLogo />
             <FlipCoLogo />
@@ -64,7 +64,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-400">
-          <div>© 2026 THE SOCIAL KLUB LUCKNOW • POWERED BY THE FLIP CO. ALL RIGHTS RESERVED.</div>
+          <div>© 2026 THE SOCIAL KLUB LUCKNOW • BACKED BY THE FLIP CO. ALL RIGHTS RESERVED.</div>
           <div className="flex items-center gap-6">
             <a href="#about" className="hover:text-[#d7dd44]">
               About
