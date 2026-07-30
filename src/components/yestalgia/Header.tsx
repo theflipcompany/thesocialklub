@@ -1,5 +1,6 @@
 import React from "react";
 import { SocialKlubLogo } from "./DecathlonLogo";
+import { FlipCoLogo } from "./FlipCoLogo";
 import { X } from "lucide-react";
 
 interface HeaderProps {
@@ -33,18 +34,16 @@ export function Header({ isMenuOpen, onToggleMenu }: HeaderProps) {
         </button>
       </div>
 
-      {/* Center: Absolute 100% Centered Main Logo */}
-      <div className="pointer-events-auto absolute left-1/2 -translate-x-1/2 top-2 sm:top-3 flex flex-col items-center justify-center text-center z-10">
+      {/* Center: Absolute 100% Centered Main Logo & Backed By Flip Co */}
+      <div className="pointer-events-auto absolute left-1/2 -translate-x-1/2 top-2 sm:top-3 flex flex-col items-center justify-center text-center z-10 gap-0.5 sm:gap-1">
         <a
           href="#"
-          className="transition-transform duration-300 hover:scale-105 flex flex-col items-center justify-center transform scale-85 sm:scale-100 origin-top"
+          className="transition-transform duration-300 hover:scale-105 flex flex-col items-center justify-center transform scale-80 sm:scale-95 origin-top"
           aria-label="The Social Klub Home"
         >
           <SocialKlubLogo className="drop-shadow-md" />
-          <span className="mt-1 font-mono text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#0052cc] text-white px-2 py-0.5 rounded-full border border-black shadow-[1px_1px_0px_#000] whitespace-nowrap">
-            Backed by The FLIP Co.
-          </span>
         </a>
+        <FlipCoLogo className="transform scale-65 sm:scale-75 origin-top" />
       </div>
 
       {/* Right: Semicircle Peeping 'Join The Klub' Tab */}
