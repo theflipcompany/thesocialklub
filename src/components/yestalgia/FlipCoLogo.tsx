@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface FlipCoLogoProps {
   className?: string;
@@ -18,13 +19,20 @@ export function FlipCoLogo({
       aria-label="Backed by The FLIP Co. - Visit Website"
     >
       {/* "BACKED BY" Pill */}
-      <div className="bg-[#d7dd44] border-2 border-black rounded-full px-3.5 py-0.5 text-[10px] sm:text-[11px] font-black font-mono tracking-widest text-black shadow-[2px_2px_0px_#000] uppercase leading-none">
+      <div className="bg-[#d7dd44] border-2 border-black rounded-full px-4 py-0.5 text-[11px] sm:text-xs font-black font-mono tracking-widest text-black shadow-[2px_2px_0px_#000] uppercase leading-none">
         BACKED BY
       </div>
 
-      {/* Eyelash Rays */}
-      <svg
-        className="w-10 h-3 my-0.5"
+      {/* Eyelash Rays with Blink Eye Motion */}
+      <motion.svg
+        animate={{ scaleY: [1, 0.1, 1, 1, 1, 0.1, 1] }}
+        transition={{
+          duration: 0.5,
+          repeat: Infinity,
+          repeatDelay: 2.2,
+          ease: "easeInOut",
+        }}
+        className="w-11 h-3.5 my-0.5 origin-center"
         viewBox="0 0 40 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -57,12 +65,26 @@ export function FlipCoLogo({
           strokeWidth="2.5"
           strokeLinecap="round"
         />
-      </svg>
+      </motion.svg>
 
-      {/* "THE FLIP CO." Badge */}
-      <div className="bg-[#0052cc] text-white border-2 border-black rounded-full px-4 py-1 text-xs sm:text-sm font-black tracking-wider shadow-[3px_3px_0px_#000] uppercase font-sans leading-none">
+      {/* "THE FLIP CO." Badge with 3D Vertical Flip Motion */}
+      <motion.div
+        animate={{ rotateX: [0, 360] }}
+        transition={{
+          duration: 0.85,
+          repeat: Infinity,
+          repeatDelay: 3.2,
+          ease: [0.45, 0.05, 0.55, 0.95],
+        }}
+        whileHover={{
+          rotateX: 360,
+          transition: { duration: 0.5, ease: "easeOut" },
+        }}
+        style={{ perspective: 600, transformStyle: "preserve-3d" }}
+        className="bg-[#0052cc] text-white border-2 border-black rounded-full px-4.5 py-1 text-xs sm:text-sm font-black tracking-wider shadow-[3px_3px_0px_#000] uppercase font-sans leading-none"
+      >
         THE FLIP CO.
-      </div>
+      </motion.div>
     </a>
   );
 }

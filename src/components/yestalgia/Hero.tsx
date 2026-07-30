@@ -101,7 +101,7 @@ export function Hero() {
 
           <p className="mt-5 max-w-2xl mx-auto text-sm sm:text-xl font-semibold text-gray-800 leading-relaxed px-2">
             The Social कlub is a space for new people, real conversations and unforgettable
-            experiences in Lucknow.
+            experiences.
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export function Hero() {
             </h2>
 
             <p className="max-w-2xl mx-auto text-sm sm:text-lg font-semibold text-gray-700 leading-relaxed mb-6 sm:mb-8">
-              We're not just another social page. We're a community in Lucknow that brings people
+              We're not just another social page. We're a community originated in Lucknow that brings people
               together through experiences that feel real — from cozy cafe meetups to open mics,
               game nights and rooftop sunsets.
             </p>
@@ -146,7 +146,52 @@ export function Hero() {
           </div>
         </div>
 
-        {/* BEHIND THIS KLUB Section (Directly under What Is The Social Klub) */}
+        {/* WHY WE STARTED Section (Directly before Behind This Klub) */}
+        <div className="mt-10 sm:mt-16 w-full max-w-4xl" id="why-we-started">
+          <div className="relative bg-white border-3 sm:border-4 border-black p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[8px_8px_0px_#00966e] text-black text-center overflow-hidden">
+            {/* Tag */}
+            <div className="inline-block bg-[#d7dd44] text-black font-condensed text-xs sm:text-sm font-black px-3.5 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_#000] uppercase mb-4">
+              OUR ORIGIN STORY
+            </div>
+
+            <h2 className="font-condensed text-4xl sm:text-6xl font-black text-black tracking-tight uppercase leading-none mb-6 text-center">
+              WHY WE <span className="text-[#e95f95]">STARTED</span>
+            </h2>
+
+            <div className="space-y-4 text-gray-800 font-medium text-base sm:text-lg leading-relaxed max-w-3xl mx-auto text-center">
+              <p className="font-bold text-gray-900 text-lg sm:text-xl">
+                It all started with a simple question.
+              </p>
+
+              <blockquote className="my-4 italic font-condensed font-bold text-2xl sm:text-4xl text-[#00966e] bg-[#f9faf7] py-3 px-6 rounded-2xl border-2 border-black shadow-[3px_3px_0px_#e95f95] inline-block mx-auto">
+                "Aaj kuch karein?"
+              </blockquote>
+
+              <p>
+                Mehak said it one evening, and we realised we never had an answer beyond cafés, clubs, or sitting together while scrolling on our phones.
+              </p>
+
+              <p className="font-semibold text-black">
+                So, in our early twenties, we decided to build the kind of space we wished existed.
+              </p>
+
+              <p>
+                There were sleepless nights, endless venue hunts, ideas that failed, and countless baby steps. But the vision never changed to create a place where people could truly gather. A space that felt safe, especially for women, where strangers could become friends, and where moments were lived instead of recorded.
+              </p>
+
+              <div className="pt-4 border-t-2 border-gray-200">
+                <p className="font-bold text-black text-lg sm:text-xl">
+                  The Social कlub isn't just about events.
+                </p>
+                <p className="mt-2 text-[#00966e] font-semibold max-w-2xl mx-auto">
+                  It's about giving people a reason to put their phones away, be present, and leave feeling a little more connected than when they arrived.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BEHIND THIS KLUB Section (Directly under Why We Started) */}
         <div className="mt-10 sm:mt-16 w-full max-w-4xl" id="behind-this-klub">
           <div className="relative bg-[#18181b] border-3 sm:border-4 border-black p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[8px_8px_0px_#d7dd44] text-white text-center overflow-hidden">
             {/* Tag */}

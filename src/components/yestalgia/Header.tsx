@@ -43,7 +43,7 @@ export function Header({ isMenuOpen, onToggleMenu }: HeaderProps) {
         >
           <SocialKlubLogo className="drop-shadow-md" />
         </a>
-        <FlipCoLogo className="transform scale-65 sm:scale-75 origin-top" />
+        <FlipCoLogo className="transform scale-85 sm:scale-95 origin-top mt-0.5" />
       </div>
 
       {/* Right: Semicircle Peeping 'Join The Klub' Tab */}
