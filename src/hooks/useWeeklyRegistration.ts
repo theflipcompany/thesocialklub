@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { getRegistrationState, RegistrationSchedule, RegistrationState } from "@/utils/registration";
+import {
+  getRegistrationState,
+  RegistrationSchedule,
+  RegistrationState,
+} from "@/utils/registration";
 
 export function useWeeklyRegistration(schedule?: RegistrationSchedule): RegistrationState {
   const [regState, setRegState] = useState<RegistrationState>(() =>

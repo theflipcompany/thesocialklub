@@ -60,7 +60,7 @@ function getISTComponents(date: Date) {
  */
 export function getRegistrationState(
   schedule?: RegistrationSchedule,
-  nowDate: Date = new Date()
+  nowDate: Date = new Date(),
 ): RegistrationState {
   const { dayOfWeek, hours, minutes, seconds } = getISTComponents(nowDate);
 

@@ -112,7 +112,7 @@ function EventCard({ eventItem }: EventCardProps) {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const { isLive, closesInText, tooltip, statusText } = useWeeklyRegistration(
-    eventItem.registrationSchedule
+    eventItem.registrationSchedule,
   );
 
   const startTimer = () => {
