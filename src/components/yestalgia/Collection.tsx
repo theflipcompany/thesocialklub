@@ -160,16 +160,22 @@ function EventCard({ eventItem }: EventCardProps) {
       className="relative [perspective:1000px] w-full min-h-[480px]"
     >
       <div
-        className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
-          isFlipped ? "[transform:rotateY(180deg)]" : ""
+        className={`relative w-full h-full transition-transform duration-700 flip-card-preserve-3d ${
+          isFlipped ? "[transform:rotateY(180deg)] [-webkit-transform:rotateY(180deg)]" : ""
         }`}
       >
         {/* FRONT OF CARD */}
-        <div className="bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_#000] flex flex-col justify-between [backface-visibility:hidden] w-full h-full transition-all duration-300 hover:shadow-[12px_12px_0px_#000]">
+        <div
+          className={`bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_#000] flex flex-col justify-between flip-card-backface-hidden w-full h-full transition-all duration-300 hover:shadow-[12px_12px_0px_#000] [transform:translateZ(1px)] [-webkit-transform:translateZ(1px)] ${
+            isFlipped
+              ? "pointer-events-none opacity-0 invisible"
+              : "pointer-events-auto opacity-100 visible"
+          }`}
+        >
           <div>
             {/* Cassette Tape Hero Visual */}
             <div
-              className="relative rounded-2xl border-3 border-black p-4 mb-5 shadow-[4px_4px_0px_#000] transition-colors"
+              className="relative rounded-2xl border-3 border-black p-4 mb-5 shadow-[4px_4px_0px_#000] transition-colors flip-card-backface-hidden"
               style={{ backgroundColor: eventItem.tapeColor }}
             >
               {/* Top Screws + Tape Number */}
@@ -208,34 +214,34 @@ function EventCard({ eventItem }: EventCardProps) {
               </div>
 
               {/* Cassette Spools Window */}
-              <div className="bg-[#222] border-2 border-black rounded-xl p-2 flex items-center justify-around relative overflow-hidden">
+              <div className="bg-[#222] border-2 border-black rounded-xl p-2 flex items-center justify-around relative overflow-hidden flip-card-backface-hidden">
                 {/* Magnetic Tape Strip */}
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 bg-amber-900/80 border-y border-amber-950 opacity-90" />
+                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 bg-amber-900/80 border-y border-amber-950 opacity-90 flip-card-backface-hidden" />
 
                 {/* Left Spool */}
-                <div className="relative z-10 w-9 h-9 rounded-full border-2 border-white bg-black flex items-center justify-center">
+                <div className="relative w-9 h-9 rounded-full border-2 border-white bg-black flex items-center justify-center flip-card-backface-hidden">
                   <div
-                    className={`w-7 h-7 rounded-full border-2 border-dashed border-white flex items-center justify-center ${
-                      isHovered ? "animate-spool-fast" : "animate-spool"
+                    className={`w-7 h-7 rounded-full border-2 border-dashed border-white flex items-center justify-center flip-card-backface-hidden ${
+                      !isFlipped ? (isHovered ? "animate-spool-fast" : "animate-spool") : ""
                     }`}
                   >
-                    <div className="w-2 h-2 rounded-full bg-white" />
+                    <div className="w-2 h-2 rounded-full bg-white flip-card-backface-hidden" />
                   </div>
                 </div>
 
                 {/* Window Counter */}
-                <div className="relative z-10 font-mono text-[10px] text-[#d7dd44] font-bold bg-black/90 px-2 py-0.5 rounded border border-white/20">
+                <div className="relative font-mono text-[10px] text-[#d7dd44] font-bold bg-black/90 px-2 py-0.5 rounded border border-white/20 flip-card-backface-hidden">
                   00:76
                 </div>
 
                 {/* Right Spool */}
-                <div className="relative z-10 w-9 h-9 rounded-full border-2 border-white bg-black flex items-center justify-center">
+                <div className="relative w-9 h-9 rounded-full border-2 border-white bg-black flex items-center justify-center flip-card-backface-hidden">
                   <div
-                    className={`w-7 h-7 rounded-full border-2 border-dashed border-white flex items-center justify-center ${
-                      isHovered ? "animate-spool-fast" : "animate-spool"
+                    className={`w-7 h-7 rounded-full border-2 border-dashed border-white flex items-center justify-center flip-card-backface-hidden ${
+                      !isFlipped ? (isHovered ? "animate-spool-fast" : "animate-spool") : ""
                     }`}
                   >
-                    <div className="w-2 h-2 rounded-full bg-white" />
+                    <div className="w-2 h-2 rounded-full bg-white flip-card-backface-hidden" />
                   </div>
                 </div>
               </div>
@@ -250,13 +256,13 @@ function EventCard({ eventItem }: EventCardProps) {
 
             {/* Description (Rendered only if non-empty) */}
             {eventItem.tagline && (
-              <p className="text-xs font-medium text-gray-700 mb-4 leading-relaxed">
+              <p className="text-xs font-medium text-gray-700 mb-4 leading-relaxed text-center">
                 {eventItem.tagline}
               </p>
             )}
 
             {/* Info Row (Location & Capacity) */}
-            <div className="flex items-center gap-4 text-xs font-bold text-gray-800 mb-3">
+            <div className="flex items-center justify-center gap-4 text-xs font-bold text-gray-800 mb-3">
               {eventItem.location && (
                 <span className="flex items-center gap-1">
                   <MapPin className="h-3.5 w-3.5 text-[#00966e]" /> {eventItem.location}
@@ -271,8 +277,8 @@ function EventCard({ eventItem }: EventCardProps) {
 
             {/* Registration Status Pill */}
             {isLive ? (
-              <div className="mb-4 bg-[#f9faf7] border-2 border-black p-3 rounded-2xl flex items-center justify-between shadow-[2px_2px_0px_#000]">
-                <div className="flex items-center gap-2">
+              <div className="mb-4 bg-[#f9faf7] border-2 border-black p-3 rounded-2xl flex items-center justify-center text-center shadow-[2px_2px_0px_#000]">
+                <div className="flex items-center justify-center gap-2">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
@@ -283,8 +289,8 @@ function EventCard({ eventItem }: EventCardProps) {
                 </div>
               </div>
             ) : (
-              <div className="mb-4 bg-[#f9faf7] border-2 border-black p-3 rounded-2xl flex items-center justify-between shadow-[2px_2px_0px_#000]">
-                <div className="flex items-center gap-2">
+              <div className="mb-4 bg-[#f9faf7] border-2 border-black p-3 rounded-2xl flex items-center justify-center text-center shadow-[2px_2px_0px_#000]">
+                <div className="flex items-center justify-center gap-2">
                   <Clock className="h-4 w-4 text-[#00966e]" />
                   <span className="font-condensed font-black text-xs uppercase text-gray-900">
                     {statusText}
@@ -306,7 +312,13 @@ function EventCard({ eventItem }: EventCardProps) {
         </div>
 
         {/* BACK OF CARD (Flipped) */}
-        <div className="absolute inset-0 bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_#000] flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] w-full h-full">
+        <div
+          className={`absolute inset-0 bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_#000] flex flex-col justify-between flip-card-backface-hidden [transform:rotateY(180deg)_translateZ(1px)] [-webkit-transform:rotateY(180deg)_translateZ(1px)] w-full h-full ${
+            isFlipped
+              ? "pointer-events-auto opacity-100 visible"
+              : "pointer-events-none opacity-0 invisible"
+          }`}
+        >
           <div className="flex flex-col h-full justify-between">
             <div>
               {/* Header with Tag & Flip Back Button */}
@@ -323,19 +335,19 @@ function EventCard({ eventItem }: EventCardProps) {
               </div>
 
               {/* Title */}
-              <h3 className="font-condensed text-2xl font-black text-black leading-tight uppercase mb-2">
+              <h3 className="font-condensed text-2xl font-black text-black leading-tight uppercase mb-2 text-center">
                 {eventItem.name}
               </h3>
 
               {/* Capacity Tag */}
               {eventItem.capacity && (
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#00966e] mb-3">
+                <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-[#00966e] mb-3">
                   <Users className="h-4 w-4" /> <span>{eventItem.capacity}</span>
                 </div>
               )}
 
               {/* Description Box */}
-              <div className="bg-[#f9faf7] border-2 border-black p-4 rounded-2xl text-gray-800 text-sm font-medium leading-relaxed shadow-[3px_3px_0px_#000]">
+              <div className="bg-[#f9faf7] border-2 border-black p-4 rounded-2xl text-gray-800 text-sm font-medium leading-relaxed text-center shadow-[3px_3px_0px_#000]">
                 <p>{eventItem.flippedDescription}</p>
               </div>
             </div>
@@ -356,9 +368,7 @@ function EventCard({ eventItem }: EventCardProps) {
                   disabled
                   title={tooltip || "Registration opens soon."}
                   className="w-full bg-gray-200 text-gray-500 border-3 border-black rounded-2xl py-3.5 text-center flex items-center justify-center gap-2 cursor-not-allowed font-condensed font-black text-sm uppercase opacity-60 shadow-none"
-                >
-                  <Lock className="h-4 w-4 text-gray-400" /> Register Now
-                </button>
+                ></button>
               )}
             </div>
           </div>

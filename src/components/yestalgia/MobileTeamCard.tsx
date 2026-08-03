@@ -48,14 +48,18 @@ export function MobileTeamCard({ member, index, isFlipped, onToggleFlip }: Mobil
           aria-label={`${member.name}, ${member.role}. Tap to view bio.`}
           onClick={onToggleFlip}
           onKeyDown={handleKeyDown}
-          className={`relative w-full h-full cursor-pointer transition-transform duration-600 [transform-style:preserve-3d] focus:outline-none focus:ring-4 focus:ring-black rounded-full ${
-            isFlipped && !shouldReduceMotion ? "[transform:rotateY(180deg)]" : ""
+          className={`relative w-full h-full cursor-pointer transition-transform duration-600 flip-card-preserve-3d focus:outline-none focus:ring-4 focus:ring-black rounded-full ${
+            isFlipped && !shouldReduceMotion
+              ? "[transform:rotateY(180deg)] [-webkit-transform:rotateY(180deg)]"
+              : ""
           }`}
         >
           {/* FRONT SIDE */}
           <div
-            className={`absolute inset-0 bg-white border-3 border-black rounded-full px-4 py-2 shadow-[5px_5px_0px_#000] flex items-center justify-between [backface-visibility:hidden] overflow-hidden ${
-              isFlipped && shouldReduceMotion ? "hidden" : "flex"
+            className={`absolute inset-0 bg-white border-3 border-black rounded-full px-4 py-2 shadow-[5px_5px_0px_#000] flex items-center justify-between flip-card-backface-hidden overflow-hidden [transform:translateZ(1px)] [-webkit-transform:translateZ(1px)] ${
+              isFlipped
+                ? "pointer-events-none opacity-0 invisible"
+                : "pointer-events-auto opacity-100 visible flex"
             }`}
           >
             <div className="flex items-center gap-3.5 w-full">
@@ -90,8 +94,10 @@ export function MobileTeamCard({ member, index, isFlipped, onToggleFlip }: Mobil
 
           {/* BACK SIDE */}
           <div
-            className={`absolute inset-0 bg-[#18181b] border-3 border-black rounded-full px-6 py-2 shadow-[5px_5px_0px_#000] flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden ${
-              isFlipped && shouldReduceMotion ? "flex" : ""
+            className={`absolute inset-0 bg-[#18181b] border-3 border-black rounded-full px-6 py-2 shadow-[5px_5px_0px_#000] flex flex-col items-center justify-center text-center flip-card-backface-hidden [transform:rotateY(180deg)_translateZ(1px)] [-webkit-transform:rotateY(180deg)_translateZ(1px)] overflow-hidden ${
+              isFlipped
+                ? "pointer-events-auto opacity-100 visible flex"
+                : "pointer-events-none opacity-0 invisible"
             }`}
           >
             <p className="text-white text-xs sm:text-sm font-semibold leading-tight line-clamp-3 px-2">

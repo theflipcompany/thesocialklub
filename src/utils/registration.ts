@@ -90,7 +90,7 @@ export function getRegistrationState(
 
   return {
     isLive: false,
-    statusText: `Coming Soon • Next ${targetDayName}`,
+    statusText: `COMING SOON - ${targetDayName} 8 PM`,
     buttonLabel: "Register Now",
     buttonEnabled: false,
     tooltip: `Registration opens next ${targetDayName} at ${targetDisplayTime}.`,
