@@ -1,0 +1,643 @@
+:root {
+    --primary: #DE135E;       /* Deep vibrant pink/magenta from the poster */
+    --primary-dark: #B50E4C;
+    --gold: #FBE27C;         /* Yellowish gold from the poster */
+    --gold-dark: #D4B34A;
+    --bg-color: #DE135E;     /* Right half background */
+    --card-bg: #FFFFFF;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --text-main: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.8);
+    --dark-box: rgba(80, 0, 20, 0.35); /* Dark maroon overlay for boxes */
+    --error: #EF4444;
+    --success: #10B981;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#main-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Steps */
+.step {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* App Layout */
+.app-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 45%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/736x/bd/b3/99/bdb39962b5979c7be975a9089cac322f.jpg');
+    background-size: cover;
+    background-position: left center;
+}
+
+.right-panel {
+    width: 55%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.landing-content {
+    width: 100%;
+    padding: 2rem 2rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.organizer {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.organizer strong {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+/* Separator lines around organizer */
+.organizer::before, .organizer::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--text-muted);
+    position: relative;
+    top: 5px;
+    margin: 0 10px;
+}
+.organizer {
+    flex-direction: row;
+}
+
+.event-title {
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.event-title h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--text-main);
+    font-family: 'Playfair Display', serif;
+}
+
+.event-title h1.highlight {
+    color: var(--gold);
+}
+
+.season {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+.season span {
+    font-size: 0.95rem;
+    letter-spacing: 6px;
+    color: var(--text-main);
+}
+.season .line {
+    height: 1px;
+    width: 80px;
+    background-color: var(--text-muted);
+}
+
+.info-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+.info-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+    flex: 1;
+}
+.info-item:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}
+.info-item .icon {
+    font-size: 1.5rem;
+}
+.info-item .label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+.info-item p {
+    font-size: 0.75rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+.price-val {
+    font-size: 1rem !important;
+    font-weight: 600;
+}
+.badge {
+    background: var(--gold);
+    color: #000;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.offers-banner {
+    background-color: var(--dark-box);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.section-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Add lines to subtitle */
+.section-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-subtitle::before, .section-subtitle::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+    margin: 0 15px;
+}
+
+.offers-grid {
+    display: flex;
+    justify-content: space-around;
+}
+.offer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+.offer-item:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+    padding-right: 1.5rem;
+}
+.offer-item .icon {
+    font-size: 1.5rem;
+}
+.offer-item p {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: var(--text-main);
+}
+
+.attractions-section {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+}
+.attraction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+.icon-gold {
+    filter: hue-rotate(50deg) saturate(200%) brightness(150%);
+}
+
+.book-btn {
+    width: 100%;
+    max-width: 350px;
+    background: var(--gold) !important;
+    color: #000 !important;
+    border-radius: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+.book-btn:hover {
+    background: var(--gold-dark) !important;
+    transform: translateY(-2px);
+}
+
+/* Forms - Keeping them centered for the actual form steps */
+form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #111827;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+}
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #F9FAFB;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(222, 19, 94, 0.1);
+}
+.error-message {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+    min-height: 20px;
+}
+.input-error {
+    border-color: var(--error) !important;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    flex: 1;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: #E5E7EB;
+    color: #333;
+    flex: 0 0 auto;
+    min-width: 120px;
+}
+
+.btn-secondary:hover {
+    background: #D1D5DB;
+}
+
+.btn:disabled {
+    background: #E5E7EB;
+    color: #9CA3AF;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Progress */
+.progress-container {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 600px;
+}
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.progress-fill {
+    height: 100%;
+    background: var(--gold);
+    width: 16.66%;
+    transition: width 0.3s ease;
+}
+.progress-text {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Price Calculator */
+.price-calculator {
+    background: #F9FAFB;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px dashed #D1D5DB;
+    margin-top: 1.5rem;
+}
+.total-display {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0.5rem 0;
+}
+.calculation-detail {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* File Upload */
+.payment-instructions {
+    text-align: center;
+    background: #F9FAFB;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #D1D5DB;
+}
+.qr-code-container {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+.payment-qr {
+    max-width: 250px;
+    border-radius: 8px;
+    border: 2px solid var(--primary);
+    padding: 10px;
+    background: #fff;
+}
+.file-upload-container {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+.file-upload-container input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.upload-area {
+    border: 2px dashed #D1D5DB;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    background: #FFFFFF;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.file-upload-container:hover .upload-area {
+    border-color: var(--primary);
+    background: rgba(222, 19, 94, 0.02);
+}
+.file-preview-container {
+    margin-top: 1rem;
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #D1D5DB;
+}
+#file-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.file-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+.btn-remove {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Overlay & Success */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(222, 19, 94, 0.9);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+.success-screen {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.success-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    color: #333;
+}
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.success-card h2 {
+    color: var(--success);
+}
+.booking-summary {
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+    border: 1px solid #D1D5DB;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #D1D5DB;
+}
+.summary-item:last-child {
+    border-bottom: none;
+}
+.status-pending strong {
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-image { display: none; }
+    .right-panel { 
+        width: 100%; 
+        background: url('https://i.pinimg.com/736x/bd/b3/99/bdb39962b5979c7be975a9089cac322f.jpg') center/cover no-repeat;
+    }
+    /* Add a subtle dark overlay so text is readable without the magenta */
+    .right-panel::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+    }
+    .right-panel > * {
+        position: relative;
+        z-index: 1;
+    }
+    .landing-content { width: 100%; padding: 2rem 1rem; }
+}
+@media (max-width: 768px) {
+    .event-title h1 { font-size: 3rem; }
+    .season span { font-size: 0.75rem; letter-spacing: 3px; }
+    .info-grid { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .info-item { border-right: none !important; border-bottom: none; padding-bottom: 0; }
+    .info-item .icon { font-size: 1.2rem; }
+    .info-item p { font-size: 0.65rem; }
+    .info-item .label { font-size: 0.65rem; }
+    .offers-banner { padding: 0.8rem; margin-bottom: 0.8rem; }
+    .offers-grid { flex-direction: row; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+    .offer-item:not(:last-child) { border-right: none; padding-right: 0; }
+    .offer-item { flex-direction: column; text-align: center; width: 30%; }
+    .offer-item .icon { font-size: 1.2rem; }
+    .offer-item p { font-size: 0.65rem; }
+    .attractions-section { margin-bottom: 1rem; }
+    .attractions-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .attraction-item { font-size: 0.6rem; flex-direction: column; align-items: center; text-align: center; }
+    .attraction-item .icon { font-size: 1rem; margin-bottom: 2px; }
+    .book-btn { padding: 0.8rem; font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+    .event-title h1 { font-size: 2.5rem; }
+    .attractions-grid { grid-template-columns: repeat(3, 1fr); }
+    .form-card { padding: 1.5rem 1rem; }
+    .button-group { flex-direction: column-reverse; }
+}

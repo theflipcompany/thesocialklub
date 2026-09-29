@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bollywood Dandiya Night - Season 2 | Book Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <div class="hero-image"></div>
+        <div class="right-panel">
+            <div class="container" id="main-container">
+                
+                <!-- Step 0: Event Information -->
+                <div class="step active" id="step-0">
+                    <div class="landing-content">
+                        <p class="organizer">ORGANISED BY<br><strong>DAY & NIGHT EVENTS</strong></p>
+                    
+                    <div class="event-title">
+                        <h1>BOLLYWOOD</h1>
+                        <h1 class="highlight">DANDIYA NIGHT</h1>
+                        <div class="season">
+                            <span class="line"></span>
+                            <span>SEASON 2</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="icon">📅</span>
+                            <div>
+                                <span class="label">DATE</span>
+                                <p>16th, 17th and 18th<br>October 2026</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <span class="label">VENUE</span>
+                                <p>LDA Cricket Stadium,<br>Aliganj, Near Purnia Chauraha,<br>Lucknow</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">🎟️</span>
+                            <div>
+                                <span class="label">TICKET PRICE</span>
+                                <p class="price-val">₹249 per person</p>
+                                <span class="badge">Early Bird</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offers-banner">
+                        <h4 class="section-subtitle">EXCLUSIVE OFFERS & SERVICES</h4>
+                        <div class="offers-grid">
+                            <div class="offer-item">
+                                <span class="icon icon-gold">✂️</span>
+                                <p>Free discount coupon<br>for a luxury salon</p>
+                            </div>
+                            <div class="offer-item">
+                                <span class="icon icon-gold">🧑‍🤝‍🧑</span>
+                                <p>Free dance class</p>
+                            </div>
+                            <div class="offer-item">
+                                <span class="icon icon-gold">🚚</span>
+                                <p>Free home delivery<br>of passes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attractions-section">
+                        <h4 class="section-subtitle">EVENT ATTRACTIONS</h4>
+                        <div class="attractions-grid">
+                            <div class="attraction-item"><span class="icon icon-gold">⭐</span> <span>IIFA-style opening ceremony</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🔅</span> <span>Laser light show</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">💃</span> <span>Nonstop Dandiya dance</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🔥</span> <span>Mexican fire show on<br>Bollywood beats</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🎇</span> <span>Spectacular fireworks</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🥁</span> <span>Live Dhol beats and<br>public contests</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">📸</span> <span>Bollywood-themed décor<br>for photoshoots</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🍴</span> <span>Delicious food stalls</span></div>
+                            <div class="attraction-item"><span class="icon icon-gold">🛍️</span> <span>Trendy lifestyle stalls</span></div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large book-btn" onclick="nextStep(1)">BOOK YOUR TICKETS &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Progress Bar (Visible from step 1) -->
+        <div class="progress-container" id="progress-container" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">Step <span id="current-step-num">1</span> of 6</p>
+        </div>
+
+        <!-- Form Container -->
+        <form id="bookingForm" onsubmit="event.preventDefault(); submitForm();">
+            
+            <!-- Step 1: Name -->
+            <div class="step" id="step-1">
+                <div class="card form-card">
+                    <h2>Your Details</h2>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(0)">Back</button>
+                    <button type="button" class="btn btn-primary" onclick="validateAndNext(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: WhatsApp Number -->
+            <div class="step" id="step-2">
+                <div class="card form-card">
+                    <h2>Contact Information</h2>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp Number *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required>
+                        <span class="error-message" id="whatsapp-error"></span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(1)">Back</button>
+                    <button type="button" class="btn btn-primary" onclick="validateAndNext(2)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Booking Quantity -->
+            <div class="step" id="step-3">
+                <div class="card form-card">
+                    <h2>Ticket Selection</h2>
+                    <div class="form-group">
+                        <label for="quantity">Booking for How Many People *</label>
+                        <input type="number" id="quantity" name="quantity" min="1" step="1" placeholder="Enter number of people" required oninput="calculateTotal()">
+                        <span class="error-message" id="quantity-error"></span>
+                    </div>
+                    <div class="price-calculator">
+                        <p>Price per ticket: ₹249</p>
+                        <p class="total-display">Total Amount: <span id="display-total-amount">₹0</span></p>
+                        <p class="calculation-detail" id="calculation-detail"></p>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                    <button type="button" class="btn btn-primary" onclick="validateAndNext(3)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Email -->
+            <div class="step" id="step-4">
+                <div class="card form-card">
+                    <h2>Contact Information</h2>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+                    <button type="button" class="btn btn-primary" onclick="validateAndNext(4)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Delivery Address -->
+            <div class="step" id="step-5">
+                <div class="card form-card">
+                    <h2>Pass Delivery</h2>
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea id="address" name="address" placeholder="Enter your complete address for pass delivery" required rows="4"></textarea>
+                        <span class="error-message" id="address-error"></span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Back</button>
+                    <button type="button" class="btn btn-primary" onclick="validateAndNext(5)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 6: Payment Verification -->
+            <div class="step" id="step-6">
+                <div class="card form-card payment-card">
+                    <h2>Payment Verification</h2>
+                    
+                    <div class="payment-instructions">
+                        <h3>Amount to Pay: <span id="final-total-amount">₹0</span></h3>
+                        <p class="instruction-text">Please scan the QR code below to pay for your tickets.</p>
+                        <div class="qr-code-container">
+                            <img src="qr.jpeg" alt="Payment QR Code" class="payment-qr">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Payment Screenshot *</label>
+                        <p class="help-text">Please pay the amount above and upload the screenshot here.</p>
+                        
+                        <div class="file-upload-container">
+                            <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept=".jpg, .jpeg, .png, .webp" required onchange="handleFileUpload(event)">
+                            <div class="upload-area" id="upload-area">
+                                <span class="upload-icon">📸</span>
+                                <span>Click to upload or drag and drop</span>
+                                <span class="file-types">JPG, JPEG, PNG, WEBP</span>
+                            </div>
+                        </div>
+                        
+                        <div class="file-preview-container" id="file-preview-container" style="display: none;">
+                            <img id="file-preview" src="" alt="Payment Screenshot Preview">
+                            <div class="file-details">
+                                <span id="file-name">filename.jpg</span>
+                                <button type="button" class="btn-remove" onclick="removeFile()">Remove</button>
+                            </div>
+                        </div>
+                        <span class="error-message" id="file-error"></span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submit-btn" disabled>SUBMIT BOOKING</button>
+                </div>
+            </div>
+            
+        </form>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Submitting your booking...</p>
+            <p class="loading-subtext">Please do not close this window.</p>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="step success-screen" id="step-success">
+            <div class="card success-card">
+                <div class="success-icon">🎉</div>
+                <h2>BOOKING SUBMITTED SUCCESSFULLY!</h2>
+                <p>Your Bollywood Dandiya Night booking details have been submitted successfully.</p>
+                
+                <div class="booking-summary">
+                    <div class="summary-item">
+                        <span>Booking ID:</span>
+                        <strong id="success-booking-id">--</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Name:</span>
+                        <strong id="success-name">--</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Number of People:</span>
+                        <strong id="success-people">--</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Total Amount:</span>
+                        <strong id="success-amount">--</strong>
+                    </div>
+                    <div class="summary-item status-pending">
+                        <span>Status:</span>
+                        <strong>Payment Verification Pending</strong>
+                    </div>
+                </div>
+                
+                <p class="info-text">Your payment screenshot has been received. Your booking is awaiting payment verification by the event organizer.</p>
+                
+                <a href="https://thesocialklub.online/" class="btn btn-primary btn-large">BACK TO HOME</a>
+            </div>
+        </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
