@@ -257,12 +257,7 @@ function submitForm() {
     return;
   }
 
-  if (
-    !validateName() ||
-    !validateWhatsApp() ||
-    !validateQuantity() ||
-    !validateEmail()
-  ) {
+  if (!validateName() || !validateWhatsApp() || !validateQuantity() || !validateEmail()) {
     alert("Please ensure all fields are filled correctly.");
     return;
   }
