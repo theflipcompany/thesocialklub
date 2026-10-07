@@ -97,7 +97,7 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
-            <p class="progress-text">Step <span id="current-step-num">1</span> of 6</p>
+            <p class="progress-text">Step <span id="current-step-num">1</span> of 5</p>
         </div>
 
         <!-- Form Container -->
@@ -172,24 +172,8 @@
                 </div>
             </div>
 
-            <!-- Step 5: Delivery Address -->
+            <!-- Step 5: Payment Verification -->
             <div class="step" id="step-5">
-                <div class="card form-card">
-                    <h2>Pass Delivery</h2>
-                    <div class="form-group">
-                        <label for="address">Address *</label>
-                        <textarea id="address" name="address" placeholder="Enter your complete address for pass delivery" required rows="4"></textarea>
-                        <span class="error-message" id="address-error"></span>
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Back</button>
-                    <button type="button" class="btn btn-primary" onclick="validateAndNext(5)">Next</button>
-                </div>
-            </div>
-
-            <!-- Step 6: Payment Verification -->
-            <div class="step" id="step-6">
                 <div class="card form-card payment-card">
                     <h2>Payment Verification</h2>
                     
@@ -225,7 +209,7 @@
                     </div>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Back</button>
                     <button type="submit" class="btn btn-primary btn-submit" id="submit-btn" disabled>SUBMIT BOOKING</button>
                 </div>
             </div>

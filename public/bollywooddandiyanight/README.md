@@ -64,7 +64,7 @@ const DRIVE_FOLDER_ID = "YOUR_DRIVE_FOLDER_ID_HERE";
 
 ### Step 2: Add Payment Instructions
 1. Open `index.html`.
-2. Locate Step 6 (`<div class="step" id="step-6">`).
+2. Locate Step 5 (`<div class="step" id="step-5">`).
 3. Find the `<!-- Organizer can add QR code or UPI ID here -->` comment.
 4. Add your UPI ID, Bank Details, or an `<img>` tag with your Payment QR code.
 

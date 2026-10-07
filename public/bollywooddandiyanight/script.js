@@ -3,7 +3,7 @@
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzGg4qLfL2KDFHAO5Q_iwg603JlKw6Dl5Y7DofDp0tORIs4xfRgKNNc6fT9ZT181GQ2/exec";
 const TICKET_PRICE = 249;
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 5;
 
 let currentStep = 0;
 let fileBase64 = null;
@@ -76,10 +76,7 @@ function validateAndNext(currentStepIndex) {
       break;
     case 4:
       isValid = validateEmail();
-      break;
-    case 5:
-      isValid = validateAddress();
-      // Also update final total on payment screen
+      // Update final total on payment screen when proceeding to step 5
       if (isValid) {
         const qty = parseInt(document.getElementById("quantity").value) || 0;
         document.getElementById("final-total-amount").textContent = `₹${qty * TICKET_PRICE}`;
@@ -174,19 +171,6 @@ function validateEmail() {
   return true;
 }
 
-function validateAddress() {
-  const address = document.getElementById("address").value.trim();
-  if (!address) {
-    showError("address", "Delivery address is required.");
-    return false;
-  }
-  if (address.length < 10) {
-    showError("address", "Please provide a more complete address.");
-    return false;
-  }
-  return true;
-}
-
 // Total Calculation
 function calculateTotal() {
   const qtyInput = document.getElementById("quantity").value;
@@ -277,8 +261,7 @@ function submitForm() {
     !validateName() ||
     !validateWhatsApp() ||
     !validateQuantity() ||
-    !validateEmail() ||
-    !validateAddress()
+    !validateEmail()
   ) {
     alert("Please ensure all fields are filled correctly.");
     return;
@@ -300,7 +283,7 @@ function submitForm() {
     whatsapp: document.getElementById("whatsapp").value.trim(),
     quantity: parseInt(document.getElementById("quantity").value),
     email: document.getElementById("email").value.trim(),
-    address: document.getElementById("address").value.trim(),
+    address: "N/A",
     fileData: fileBase64,
     mimeType: fileMimeType,
     fileName: fileName,
@@ -335,7 +318,7 @@ function submitForm() {
 }
 
 function showSuccessScreen(data) {
-  document.getElementById("step-6").classList.remove("active");
+  document.getElementById("step-5").classList.remove("active");
   document.getElementById("progress-container").style.display = "none";
 
   document.getElementById("step-success").classList.add("active");

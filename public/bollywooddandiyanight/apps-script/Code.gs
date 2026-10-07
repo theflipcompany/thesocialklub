@@ -57,7 +57,7 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     
     // 1. Validate required fields
-    if (!data.name || !data.whatsapp || !data.quantity || !data.email || !data.address || !data.fileData) {
+    if (!data.name || !data.whatsapp || !data.quantity || !data.email || !data.fileData) {
       return returnJSON({status: 'error', message: 'Missing required fields or payment screenshot.'});
     }
     
@@ -106,7 +106,7 @@ function doPost(e) {
         data.whatsapp,
         quantity,
         data.email,
-        data.address,
+        data.address || "",
         TICKET_PRICE,
         totalAmount,
         fileUrl,
