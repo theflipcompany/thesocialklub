@@ -3,21 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Social Club</title>
+    <title>The Social Klub</title>
     <script>
-      // Single Page Apps for GitHub Pages
-      // Redirects to root maintaining pathing
-      const pathSegments = window.location.pathname.split("/");
-      const repoName = pathSegments[1] || "";
-      window.location.replace(
-        window.location.origin +
-          "/" +
-          repoName +
-          "/#" +
-          window.location.pathname +
-          window.location.search +
-          window.location.hash,
-      );
+      const segments = window.location.pathname.split("/").filter(Boolean);
+      const isGithubIo = window.location.hostname.endsWith("github.io");
+      const basePath = isGithubIo && segments.length > 0 ? "/" + segments[0] + "/" : "/";
+      window.location.replace(window.location.origin + basePath);
     </script>
   </head>
   <body>

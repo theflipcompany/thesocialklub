@@ -1,10 +1,9 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+@theme {
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -22,12 +21,14 @@
 }
 
 :root {
+  --font-retro: "Barlow Condensed", "Syne", sans-serif;
+  --font-sans: "Outfit", "Roboto Flex", system-ui, sans-serif;
   --yestalgia-yellow: #d7dd44;
   --yestalgia-teal: #00966e;
   --yestalgia-pink: #e95f95;
   --yestalgia-orange: #f09341;
   --yestalgia-blue: #0693e3;
-  --yestalgia-bg: #f2f2ee;
+  --yestalgia-bg: #ecece7;
   --yestalgia-black: #111111;
 }
 
@@ -233,11 +234,11 @@
 
 /* 3D Flip Card Mobile & WebKit fixes */
 .flip-card-preserve-3d {
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .flip-card-backface-hidden {
-  backface-visibility: hidden !important;
   -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
 }
